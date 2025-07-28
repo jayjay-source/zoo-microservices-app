@@ -9,13 +9,20 @@ import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
 public class DiscoveryServerApplication {
 
 	/**
-	 * Questo progetto rappresenta il Discovery Server configurato con Eureka Server, 
-	 * componente centrale dell'architettura a microservizi. 
-	 * Il server permette la registrazione automatica dei servizi client 
-	 * e consente il loro rilevamento dinamico da parte di altri microservizi. 
-	 * Viene creato come Spring Boot Application con la dipendenza 'spring-cloud-starter-netflix-eureka-server' 
-	 * e annotato con @EnableEurekaServer.
+	 * Eureka Discovery Server:
+	 * 
+	 * Questo componente gestisce la **registrazione e scoperta** dei microservizi all'interno dell'architettura.
+	 * 
+	 * Responsabilità:
+	 * - Permette ai microservizi di registrarsi automaticamente all'avvio.
+	 * - Consente agli altri servizi (es. Gateway) di scoprire dinamicamente gli endpoint disponibili.
+	 * 
+	 * Design Pattern utilizzato:
+	 * - **Registry Pattern**: mantiene un registro centralizzato dei servizi attivi e delle loro istanze.
+	 * 
+	 * Funziona in combinazione con il Gateway per evitare configurazioni statiche degli indirizzi IP.
 	 */
+
 
 
 	public static void main(String[] args) {
