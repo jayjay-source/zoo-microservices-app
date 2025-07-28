@@ -19,7 +19,7 @@ import com.zoo.animale_service.service.AnimaleService;
 
 import lombok.RequiredArgsConstructor;
 
-@RestController
+@RestController //singleton bean
 @RequestMapping("/api/animali")
 @RequiredArgsConstructor
 @CrossOrigin(origins = "http://localhost:4200")
