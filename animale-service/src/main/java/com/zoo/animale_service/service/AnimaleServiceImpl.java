@@ -1,14 +1,31 @@
 package com.zoo.animale_service.service;
 
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
 import com.zoo.animale_service.dto.AnimaleDTO;
 import com.zoo.animale_service.entity.Animale;
 import com.zoo.animale_service.mapper.AnimaleMapper;
 import com.zoo.animale_service.repository.AnimaleRepository;
+
 import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Service;
 
-import java.util.List;
-
+// Design pattern Service per logica di business
+/**
+ * Design Pattern: Service
+ * 
+ * Il pattern Service separa la logica di business dal controller e dalle classi di accesso ai dati 
+ * (repository).
+ * 
+ * Responsabilità:
+ * - Incapsula la logica applicativa centrale.
+ * - Coordina operazioni tra più repository, validazioni o trasformazioni.
+ * - Rende il codice più modulare, riutilizzabile e testabile.
+ * 
+ * In un'architettura a livelli (layered architecture), il Service rappresenta il livello intermedio tra 
+ * Controller e Repository.
+ */
 @Service
 @RequiredArgsConstructor
 public class AnimaleServiceImpl implements AnimaleService{
@@ -18,6 +35,47 @@ public class AnimaleServiceImpl implements AnimaleService{
      * relativa all'entità associata. Questa classe è annotata con @Service per essere
      * rilevata da Spring e permette l'iniezione dei repository e di altri componenti necessari.
      */
+
+     //@Autowired // Dependency Injection in Spring
+     /**
+     * Dependency Injection (DI) in Spring:
+     * 
+     * Spring gestisce automaticamente le dipendenze tra le classi grazie all'iniezione dei bean.
+     * 
+     * 
+     * 
+     * Tipi di iniezione:
+     * - Costruttore (@Autowired o implicita in Spring Boot >= 4.3)
+     * - Setter (meno usato)
+     * - Field (non consigliato per testabilità)
+     * 
+     * Vantaggi:
+     * - Riduce l'accoppiamento tra le classi.
+     * - Migliora la manutenibilità e la testabilità del codice.
+     * - Permette l’inversione del controllo (Inversion of Control - IoC), delegando a Spring la 
+     * creazione degli oggetti.
+     * 
+     * Esempio: il costruttore riceve il repository come dipendenza e Spring lo inietta automaticamente.
+     */
+
+     /**
+     * Spring Bean:
+     * 
+     * Un Bean è un oggetto gestito dal contenitore Spring (ApplicationContext).
+     * 
+     * Caratteristiche:
+     * - Spring si occupa della creazione, configurazione e ciclo di vita del bean.
+     * - Ogni bean viene istanziato una sola volta per impostazione predefinita (scope singleton).
+     * 
+     * Come si definisce un Bean:
+     * - Annotando una classe con @Component, @Service, @Repository o @Controller (scansione automatica).
+     * - Oppure manualmente con il metodo @Bean all'interno di una classe @Configuration.
+     * 
+     * Vantaggi:
+     * - Permette l’iniezione delle dipendenze (Dependency Injection).
+     * - Centralizza la gestione degli oggetti e migliora l'organizzazione del codice.
+     */
+
 
     private final AnimaleRepository repository;
     private final AnimaleMapper mapper;

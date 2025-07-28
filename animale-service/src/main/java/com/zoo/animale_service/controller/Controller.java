@@ -1,13 +1,23 @@
 package com.zoo.animale_service.controller;
 
-import com.zoo.animale_service.dto.AnimaleDTO;
-import com.zoo.animale_service.service.AnimaleService;
-import lombok.RequiredArgsConstructor;
+import java.util.List;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
+import com.zoo.animale_service.dto.AnimaleDTO;
+import com.zoo.animale_service.service.AnimaleService;
+
+import lombok.RequiredArgsConstructor;
 
 @RestController
 @RequestMapping("/api/animali")
@@ -15,11 +25,37 @@ import java.util.List;
 @CrossOrigin(origins = "http://localhost:4200")
 public class Controller {
 
+
+
     /**
      * Controller REST che espone le API per la gestione dell'entità associata.
      * Gestisce le richieste HTTP in ingresso e delega la logica al service.
      * Annotato con @RestController per indicare a Spring che si tratta di un controller RESTful.
      */
+
+     /**
+         * REST Controller - API REST:
+         * 
+         * Un controller annotato con @RestController espone un'API RESTful.
+         * 
+         * Cos'è un'API REST:
+         * - È un'interfaccia che consente a client (come browser o applicazioni mobile) di comunicare con 
+         * il backend tramite HTTP.
+         * - Segue i principi REST (Representational State Transfer), usando metodi HTTP standard:
+         *   - GET: per leggere dati
+         *   - POST: per creare nuove risorse
+         *   - PUT/PATCH: per aggiornare risorse esistenti
+         *   - DELETE: per rimuovere risorse
+         * 
+         * Il controller:
+         * - Riceve le richieste HTTP.
+         * - Chiama i metodi del Service per elaborare i dati.
+         * - Restituisce risposte JSON al client.
+         * 
+         * In Spring, @RestController combina @Controller e @ResponseBody, rendendo ogni metodo pronto a 
+         * restituire dati serializzati (es. JSON).
+         */
+
 
     private final AnimaleService service;
 

@@ -1,8 +1,9 @@
 package com.zoo.animale_service.mapper;
 
+import org.springframework.stereotype.Component;
+
 import com.zoo.animale_service.dto.AnimaleDTO;
 import com.zoo.animale_service.entity.Animale;
-import org.springframework.stereotype.Component;
 
 @Component
 public class AnimaleMapper {
@@ -15,6 +16,7 @@ public class AnimaleMapper {
      */
 
     public AnimaleDTO toDto(Animale animale){
+        // Evita loop infiniti con lazy loading e relazioni
         return AnimaleDTO.builder()
                 .id(animale.getId())
                 .nome(animale.getNome())
@@ -25,6 +27,7 @@ public class AnimaleMapper {
     }
 
     public Animale toEntity(AnimaleDTO dto){
+        // Separazioni delle responsabilità tra persistenza e presentazione
         return Animale.builder()
                 .id(dto.getId())
                 .nome(dto.getNome())
