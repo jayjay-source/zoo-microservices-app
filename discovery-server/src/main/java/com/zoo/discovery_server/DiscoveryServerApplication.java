@@ -11,7 +11,8 @@ public class DiscoveryServerApplication {
 	/**
 	 * Eureka Discovery Server:
 	 * 
-	 * Questo componente gestisce la **registrazione e scoperta** dei microservizi all'interno dell'architettura.
+	 * Questo componente gestisce la **registrazione e scoperta** dei microservizi all'interno 
+	 * dell'architettura.
 	 * 
 	 * Responsabilità:
 	 * - Permette ai microservizi di registrarsi automaticamente all'avvio.
