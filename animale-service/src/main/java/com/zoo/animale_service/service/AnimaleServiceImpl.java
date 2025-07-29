@@ -99,7 +99,7 @@ public class AnimaleServiceImpl implements AnimaleService{
      * - Centralizza la gestione degli oggetti e migliora l'organizzazione del codice.
      */
 
-
+    
     private final AnimaleRepository repository;
     private final AnimaleMapper mapper;
 
