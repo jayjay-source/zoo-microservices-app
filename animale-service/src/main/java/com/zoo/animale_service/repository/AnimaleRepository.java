@@ -8,6 +8,8 @@ import com.zoo.animale_service.entity.Animale;
 @Repository //singleton bean
 public interface AnimaleRepository extends JpaRepository<Animale, Long> /*lambda: <T, ID> oggetto generico e tipo dell'id*/ {
 
+    
+
     /**
      * Questa interfaccia rappresenta un repository Spring Data JPA.
      * Estende JpaRepository per fornire operazioni CRUD e funzionalità avanzate
