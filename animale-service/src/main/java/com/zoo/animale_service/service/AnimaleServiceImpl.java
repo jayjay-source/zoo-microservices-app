@@ -2,6 +2,7 @@ package com.zoo.animale_service.service;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.zoo.animale_service.dto.AnimaleDTO;
@@ -99,9 +100,9 @@ public class AnimaleServiceImpl implements AnimaleService{
      * - Centralizza la gestione degli oggetti e migliora l'organizzazione del codice.
      */
 
-    
     private final AnimaleRepository repository;
     private final AnimaleMapper mapper;
+    
 
     @Override
     public List<AnimaleDTO> getAll() {
