@@ -26,6 +26,28 @@ import lombok.RequiredArgsConstructor;
  * In un'architettura a livelli (layered architecture), il Service rappresenta il livello intermedio tra 
  * Controller e Repository.
  */
+ /**
+      * QUI ED IN ALTRE PARTI DEL PROGRAMMA UTILIZZIAMO IL DESIGN PATTERN SINGLETON
+     * Design Pattern: Singleton
+     * 
+     * Il Singleton è un pattern creazionale che garantisce che una classe abbia una sola istanza globale
+     * e fornisce un punto di accesso condiviso a quell'istanza.
+     * 
+     * Caratteristiche:
+     * - Costruttore privato per impedire la creazione di nuove istanze.
+     * - Istanza statica accessibile tramite un metodo pubblico (es. getInstance()).
+     * 
+     * Utilizzo tipico:
+     * - Logger, configurazioni globali, connessioni centralizzate.
+     * 
+     * Singleton in Spring:
+     * - Per impostazione predefinita, tutti i Bean di Spring hanno scope Singleton.
+     *   Ciò significa che Spring crea **una sola istanza** del Bean per l'intero ApplicationContext,
+     *   che viene riutilizzata ovunque venga iniettata.
+     * 
+     * Nota: Il Singleton di Spring è **gestito dal contenitore**, non ha bisogno di implementare il pattern 
+     * manualmente.
+     */
 @Service
 @RequiredArgsConstructor
 public class AnimaleServiceImpl implements AnimaleService{
@@ -91,6 +113,12 @@ public class AnimaleServiceImpl implements AnimaleService{
     public AnimaleDTO findById(Long id) {
         Animale animale = repository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Animale non trovato"));
+        /*
+         * qui ho gestito un eccezione con RunTimeException, prevedendo la possibilità che magari
+         * un animale possa non venire trovato, è una operazione molto comune da fare insieme
+         * a .orElseThrow(), in quanto il flusso si interrompe e ottengo un messaggio
+         * utile per il debug
+        */
         return mapper.toDto(animale);
     }
 

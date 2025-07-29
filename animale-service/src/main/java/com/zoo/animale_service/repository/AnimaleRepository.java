@@ -35,27 +35,7 @@ public interface AnimaleRepository extends JpaRepository<Animale, Long> {
      * concrete.
      */
 
-     /**
-      * QUI ED IN ALTRE PARTI DEL PROGRAMMA UTILIZZIAMO IL DESIGN PATTERN SINGLETON
-     * Design Pattern: Singleton
-     * 
-     * Il Singleton è un pattern creazionale che garantisce che una classe abbia una sola istanza globale
-     * e fornisce un punto di accesso condiviso a quell'istanza.
-     * 
-     * Caratteristiche:
-     * - Costruttore privato per impedire la creazione di nuove istanze.
-     * - Istanza statica accessibile tramite un metodo pubblico (es. getInstance()).
-     * 
-     * Utilizzo tipico:
-     * - Logger, configurazioni globali, connessioni centralizzate.
-     * 
-     * Singleton in Spring:
-     * - Per impostazione predefinita, tutti i Bean di Spring hanno scope Singleton.
-     *   Ciò significa che Spring crea **una sola istanza** del Bean per l'intero ApplicationContext,
-     *   che viene riutilizzata ovunque venga iniettata.
-     * 
-     * Nota: Il Singleton di Spring è **gestito dal contenitore**, non ha bisogno di implementare il pattern manualmente.
-     */
+    
 
 
     
