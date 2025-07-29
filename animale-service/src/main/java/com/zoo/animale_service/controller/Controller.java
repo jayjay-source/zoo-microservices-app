@@ -55,8 +55,7 @@ public class Controller {
          * In Spring, @RestController combina @Controller e @ResponseBody, rendendo ogni metodo pronto a 
          * restituire dati serializzati (es. JSON).
          */
-
-
+        
     private final AnimaleService service;
 
     @GetMapping
