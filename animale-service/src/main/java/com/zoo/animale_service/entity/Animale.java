@@ -21,7 +21,7 @@ import lombok.Setter;
 // Incapsulamento: attributi privati + metodi getter/setter. 
 //l'incapsulamento è quel principio della programmazione OOP che consente di nascondere i dettagli
 //interni di implementazione dell'oggetto
-public class Animale {
+public class Animale{
 
     /**
      * Una classe in Java è un modello (o blueprint) che definisce le proprietà (attributi)

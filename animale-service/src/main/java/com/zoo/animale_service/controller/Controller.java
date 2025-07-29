@@ -22,7 +22,7 @@ import lombok.RequiredArgsConstructor;
 @RestController //singleton bean
 @RequestMapping("/api/animali")
 @RequiredArgsConstructor
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "http://localhost:4200") //CORS
 public class Controller {
 
 

@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 import com.zoo.animale_service.dto.AnimaleDTO;
 import com.zoo.animale_service.entity.Animale;
+import com.zoo.animale_service.exception.ResourceNotFoundException;
 import com.zoo.animale_service.mapper.AnimaleMapper;
 import com.zoo.animale_service.repository.AnimaleRepository;
 
@@ -112,12 +113,13 @@ public class AnimaleServiceImpl implements AnimaleService{
     @Override
     public AnimaleDTO findById(Long id) {
         Animale animale = repository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Animale non trovato"));
+                .orElseThrow(() -> new ResourceNotFoundException("Animale con ID:" + id + " non trovato"));
         /*
-         * qui ho gestito un eccezione con RunTimeException, prevedendo la possibilità che magari
-         * un animale possa non venire trovato, è una operazione molto comune da fare insieme
-         * a .orElseThrow(), in quanto il flusso si interrompe e ottengo un messaggio
-         * utile per il debug
+         * qui ho gestito un eccezione con ResourceNotFoundException, prevedendo la possibilità che magari
+         * un animale possa non venire trovato tramite il suo id, è una operazione molto comune da fare 
+         * insieme
+         * a .orElseThrow(), in quanto il flusso si interrompe e ottengo un messaggio grazie all'eccezione
+         * personalizzata, utile per il debug
         */
         return mapper.toDto(animale);
     }
