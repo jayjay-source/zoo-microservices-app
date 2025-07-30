@@ -102,7 +102,7 @@ public class AnimaleServiceImpl implements AnimaleService{
 
     private final AnimaleRepository repository;
     private final AnimaleMapper mapper;
-    
+
 
     @Override
     public List<AnimaleDTO> getAll() {
